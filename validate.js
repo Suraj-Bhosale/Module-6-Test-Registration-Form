@@ -15,10 +15,8 @@ function signup(isSubmit) {
         document.getElementById('invalid-feedback-first-name').style.display = 'none';
         error.push(false)
     }else{
-
         document.getElementById('valid-feedback-first-name').style.display = 'none';
         document.getElementById('invalid-feedback-first-name').style.display = 'block';
-        
     }
 
     if (lastName.length >= 3){
@@ -42,7 +40,8 @@ function signup(isSubmit) {
         
     }
 
-    if (password.length >= 8 && password.length !== 0){
+    let regx = ("^(?=.*[0-4])(?=.*[@\$\#])(?=.{8,})");
+    if (password.length >= 8 && password.length !== 0 && password.match(regx)) {
         document.getElementById('password-valid-feedback').style.display = 'block';
         document.getElementById('password-invalid-feedback').style.display = 'none';
         error.push(false)
@@ -53,7 +52,7 @@ function signup(isSubmit) {
 
     if(password !== confirmPassword) {
 		document.getElementById('confirm-password-invalid-feedback').style.display = 'block'
-		//error = true
+		
 	} else {
 		document.getElementById('confirm-password-invalid-feedback').style.display = 'none'
         error.push(false);
@@ -64,7 +63,6 @@ function signup(isSubmit) {
         error.push(false);
     } else {
         document.getElementById("invalid-msg").style.display = "block"
-       
     }
 
     console.log("Submit is: "+ isSubmit)
