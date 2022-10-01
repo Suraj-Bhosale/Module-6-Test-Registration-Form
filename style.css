@@ -13,7 +13,21 @@ h1{
 .sign-up{
     width: 1000px; 
     margin: 20px auto;
-   
 }
+
+@media only screen and (max-width: 600px) {
+    h1{
+        width: 1000px;
+        color: white;
+        background-color: black;
+        font-size: 25px;
+    }
+
+    .sign-up{
+        width: 700px; 
+        padding-left: 35%;
+        margin: 20px 20px auto;
+    }
+  }
 
 
